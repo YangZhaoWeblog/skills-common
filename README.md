@@ -1,12 +1,17 @@
 # skills-common
 
-> Shared skills that are reusable across workflows. Keep them lean and general.
+<p align="center"><em>Shared skills that are reusable across workflows. Keep them lean and general.</em></p>
+
+<p align="center">
+  <img alt="License MIT" src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge">
+  <img alt="Agent Skills Standard" src="https://img.shields.io/badge/Agent%20Skills-Standard-6DA544?style=for-the-badge">
+  <img alt="skills.sh Compatible" src="https://img.shields.io/badge/skills.sh-Compatible-1E6FFF?style=for-the-badge">
+  <img alt="Runtime" src="https://img.shields.io/badge/Runtime-Claude%20Code%20·%20Codex%20·%20Cursor-8A2BE2?style=for-the-badge">
+</p>
+
+<p align="center"><strong>This repository contains reusable skills that are not specific to one workflow.</strong></p>
 
 English | [中文](README.zh-CN.md)
-
-This repository contains reusable skills that are not specific to one workflow.
-
-Other languages: [中文](README.zh-CN.md)
 
 * * *
 
@@ -24,13 +29,9 @@ Other languages: [中文](README.zh-CN.md)
 
 ## Install
 
-Project scope:
-
 ```bash
 npx skills add /Users/yangzhao/Code/skills-common -y
 ```
-
-Global scope:
 
 ```bash
 npx skills add /Users/yangzhao/Code/skills-common -g -y
