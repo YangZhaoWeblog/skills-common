@@ -24,13 +24,13 @@ Sibling repos:
 Use project scope for repo-local installs:
 
 ```bash
-npx skills add /Users/yangzhao/Code/skills-common --agent claude-code --agent codex -y
+npx skills add /Users/yangzhao/Code/skills-common -y
 ```
 
 Use global scope when you want the shared skills available across all projects:
 
 ```bash
-npx skills add /Users/yangzhao/Code/skills-common --agent claude-code --agent codex -g -y
+npx skills add /Users/yangzhao/Code/skills-common -g -y
 ```
 
 Project scope is the default. `-g` switches to user-level installation.
