@@ -12,7 +12,7 @@ description: >
   当用户说"帮我画图"、"配一张图"、"这里需要图"、"生成配图"时触发。
 user_invocable: true
 metadata:
-  author: thinkdifference
+  author: td
   version: 4.0.0
 ---
 
