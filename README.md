@@ -29,9 +29,17 @@ English | [中文](README.zh-CN.md)
 
 ## Install
 
+### Project scope
+
+Install into the current repo.
+
 ```bash
 npx skills add /Users/yangzhao/Code/skills-common -y
 ```
+
+### Global scope
+
+Install into your user space.
 
 ```bash
 npx skills add /Users/yangzhao/Code/skills-common -g -y
@@ -40,6 +48,14 @@ npx skills add /Users/yangzhao/Code/skills-common -g -y
 Project scope is the default. `-g` switches to user-level installation.
 
 * * *
+
+## Skills
+
+| Skill | What it does |
+| --- | --- |
+| `knowledge-illustrator` | Turn concepts into clean diagrams and visual aids. |
+| `razor` | Keep responses dense, terse, and actionable. |
+| `tech-doc-writer` | Draft technical docs with a structured pipeline. |
 
 ## Layout
 

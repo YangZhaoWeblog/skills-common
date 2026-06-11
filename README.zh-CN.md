@@ -29,9 +29,17 @@
 
 ## 安装
 
+### 项目级
+
+装到当前仓库。
+
 ```bash
 npx skills add /Users/yangzhao/Code/skills-common -y
 ```
+
+### 全局级
+
+装到你的用户空间。
 
 ```bash
 npx skills add /Users/yangzhao/Code/skills-common -g -y
@@ -40,6 +48,14 @@ npx skills add /Users/yangzhao/Code/skills-common -g -y
 `npx skills add` 默认是项目级，`-g` 会切换成用户级安装。
 
 * * *
+
+## Skill
+
+| Skill | 作用 |
+| --- | --- |
+| `knowledge-illustrator` | 把概念画成清晰的图。 |
+| `razor` | 保持回答密度高、冗余低。 |
+| `tech-doc-writer` | 用结构化流程写技术文档。 |
 
 ## 目录
 
