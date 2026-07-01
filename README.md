@@ -47,6 +47,28 @@ npx skills@latest add YangZhaoWeblog/skills-common -g -y
 
 Project scope is the default. `-g` switches to user-level installation.
 
+### Single skill
+
+Install only one skill from this repository.
+
+```bash
+npx skills@latest add YangZhaoWeblog/skills-common --skill razor -y
+```
+
+Install one local skill directory.
+
+```bash
+npx skills@latest add /Users/yangzhao/Code/skills-common/skills/shared/razor -y
+```
+
+Use one skill without installing it.
+
+```bash
+npx skills@latest use YangZhaoWeblog/skills-common@razor
+```
+
+Replace `razor` with the target skill name. Add `-g` to install that single skill globally.
+
 * * *
 
 ## Skills
