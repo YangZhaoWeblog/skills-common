@@ -7,6 +7,7 @@ description: >
   "设计文档"、"测试报告"、"write doc"、"write report"时触发。
   也适用于用户给出一个主题并说"帮我写成文档"、"整理成报告"的场景。
   不要用于写代码注释（那是代码任务）、写 README（除非用户明确要求）。
+  不要用于个人知识文章、判断框架、概念边界文、Obsidian 风格理解笔记；这类任务交给 td-logic-writing-flow / td-logic-writer。
 user_invocable: true
 metadata:
   author: yangzhao

@@ -1,0 +1,4 @@
+interface:
+  display_name: "TD Logic Writer"
+  short_description: "Write concise judgment-system articles"
+  default_prompt: "Use $td-logic-writer to turn these notes into a concise judgment-system article."

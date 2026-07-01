@@ -1,0 +1,4 @@
+interface:
+  display_name: "TD Logic Writing Flow"
+  short_description: "Route and control MyDigitalGarden writing"
+  default_prompt: "Use $td-logic-writing-flow to route this writing task and produce the right next artifact."
