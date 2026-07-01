@@ -77,6 +77,8 @@ Replace `razor` with the target skill name. Add `-g` to install that single skil
 | --- | --- |
 | `knowledge-illustrator` | Turn concepts into clean diagrams and visual aids. |
 | `razor` | Keep responses dense, terse, and actionable. |
+| `td-logic-writer` | Write concise judgment-system articles from messy notes. |
+| `td-logic-writing-flow` | Route Obsidian writing tasks and enforce review gates. |
 | `tech-doc-writer` | Draft technical docs with a structured pipeline. |
 
 ## Layout

@@ -77,6 +77,8 @@ npx skills@latest use YangZhaoWeblog/skills-common@razor
 | --- | --- |
 | `knowledge-illustrator` | 把概念画成清晰的图。 |
 | `razor` | 保持回答密度高、冗余低。 |
+| `td-logic-writer` | 把混乱材料写成精炼的判断系统型文章。 |
+| `td-logic-writing-flow` | 分流 Obsidian 写作任务，并执行骨架门与审查门。 |
 | `tech-doc-writer` | 用结构化流程写技术文档。 |
 
 ## 目录
