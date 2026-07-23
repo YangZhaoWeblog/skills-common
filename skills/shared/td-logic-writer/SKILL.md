@@ -1,11 +1,11 @@
 ---
 name: td-logic-writer
-description: Write or revise concise, logical, no-fluff judgment-system articles for personal knowledge work. Use when the user wants to turn messy notes into a reusable judgment framework, concept boundary article, project cognition article, decision research note, or personal strategy article across technical, career, health/beauty, relationship, life-decision, or similar domains. Direct invocation is allowed when explicitly named; otherwise prefer td-logic-writing-flow to route broader Obsidian/MyDigitalGarden writing tasks. Do not use for atomic notes, MOC maps, deep-learn/light-learn lessons, DAG learning paths, casual idea capture, or formal technical reports/plans handled by tech-doc-writer.
+description: Write or revise concise, evidence-aware judgment articles for personal knowledge work. Use when the user wants to turn messy notes into a reusable concept boundary, project cognition, judgment standard, decision research note, or personal strategy across technical, career, health/beauty, relationship, life-decision, or similar domains. Direct invocation is allowed when explicitly named; otherwise prefer td-logic-writing-flow to route broader Obsidian/MyDigitalGarden writing tasks. Do not use for atomic notes, MOC maps, deep-learn/light-learn lessons, DAG learning paths, casual idea capture, or formal technical reports/plans handled by tech-doc-writer.
 ---
 
 # TD Logic Writer
 
-把混乱材料写成未来自己可复用的判断系统。文章的目标不是“讲完知识”，而是让读者下次更会判断、选择、负责、止损。
+把混乱材料压成未来可复用的判断。目标不是讲完知识，而是让读者知道默认怎么选、什么会改变选择、下一步做什么。
 
 ## Read First
 
@@ -39,19 +39,37 @@ Use this skill when the article is doing sensemaking: turning facts, options, co
 
 拿不准时问一句：这篇文章是不是为了帮助未来的自己判断、选择、负责、止损？是，就使用本 skill；不是，转给更合适的写作链路。
 
+## 先选文章类型
+
+不要把所有文章套进同一条标题链。
+
+| 类型 | 读者最后要获得什么 |
+| --- | --- |
+| 概念边界 | 定义、边界、容易混淆的对象与使用后果 |
+| 项目认知 | 责任边界、关键关系与负责人的判断点 |
+| 判断标准 | 可复用的判断条件、反例与动作 |
+| 证据型决策 | 默认选择、改变选择的条件、候选结论与停止条件 |
+
+具体骨架、证据位置和压缩步骤见 [writing-workflow.md](references/writing-workflow.md)。
+
 ## Core Rules
 
-- 背景为先：先说明这篇文章解决什么混乱、边界或判断问题，再进入术语。
+- 先写文章契约：读者、真实问题、默认选择或根定义、什么会改变它；不服务这些项的信息不进正文。
 - 结构先于句子：先修标题链和章节职责，再润色文字。
 - 标题链必须递进：后文依赖前文，不做百科式平铺。
+- 标题层级连续；不要从一级标题直接跳到三级标题。
 - 一级标题不超过 8 个；超过说明范围过大，要拆文或压缩。
-- 每节只回答一个问题；两个问题就拆，重复问题就合并。
+- 每节只回答一个判断问题；同一结论的不同解释不要拆成多个章节。
+- 一条关键判断只设一个主载体。其他位置重复时，必须新增条件、例外、证据或动作。
+- 每段必须新增判断、条件、证据、例外或动作之一；否则合并、移旁路或删除。
 - 保留用户原文里准确、有辨识度的人话；只删噪音，不磨成礼貌模板。
 - 把用户纠正当作后续写作约束：术语、事实、范围、风格一经确认就全局传播，不重复犯错或反复确认。
 - 重要概念、字段、路径和关键判断统一用加粗；可执行代码只放代码块。
 - 图、表、文字要分工：文字写判断和后果，表格写稳定比较，图写关系、层级、流向、映射、边界。
-- 如果图已经表达关系，正文只留一行锚点；不要重复解释。
-- 正文做无损压缩：中心判断留正文，决策证据和长讨论移到旁路记录；不要靠直接删除细节制造“简洁”。
+- 图或表已经给出结论，正文只留理由、例外或后果；不要逐行复述。
+- 正文做无损压缩：中心判断和改变选择的证据留正文，长证据与历史讨论移到旁路记录；不要靠直接删除细节制造“简洁”。
+- 保留事实不等于保留原句；压缩时不得把“本次证据 / 某研究 / 已核实范围”扩大成“全部现有 / 普遍事实”，也不得把“不能支持”写强成“证明”或“排除”。
+- 用户要求去重或压缩时，必须实际合并、移位或删除重复载体；只换标题和语序不算完成。
 - 不写默认总结。总结只有在它产生新判断或行动清单时才保留。
 - Obsidian 文件名已经是页面标题时，不要在正文重复总标题。
 - 不默认创建“一句话结论”章节；需要提前显性化主线时，用开场短段，不新增格式化标题。
@@ -64,4 +82,4 @@ Use this skill when the article is doing sensemaking: turning facts, options, co
 - 长任务维护最小纠正记录；正式文章不承载完整问答历史。
 - 用户明确只改局部时，不顺手重写整篇。
 - Obsidian 文章要保留 wikilink、frontmatter、图片嵌入、附件路径。
-- 事实不确定时标注为假设；技术/项目事实要从代码、proto、DB、旧文档或用户材料验证。
+- 事实不确定时标注为假设；健康、财务等高影响决策保留来源、不确定性和个人约束，不装成专业诊断。

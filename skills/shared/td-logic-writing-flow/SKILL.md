@@ -25,6 +25,7 @@ description: Route and control MyDigitalGarden/Obsidian writing tasks with a log
 | 任务 | 去向 |
 | --- | --- |
 | 判断框架、概念边界、项目认知、个人策略 | **td-logic-writer** |
+| 健康、财务、消费等风险 / 证据型个人决策 | **td-logic-writer** 的证据型决策骨架 |
 | 正式方案、报告、调研、测试报告、操作手册 | **tech-doc-writer** |
 | 原子笔记、MOC、学习链路、普通灵感 | 对应专用链路 |
 | 正式技术文档的状态、时序、ER 图 | **tech-doc-writer** |
@@ -36,9 +37,11 @@ description: Route and control MyDigitalGarden/Obsidian writing tasks with a log
 - 先读当前文件、用户修改、截图、链接和参考样本；当前版本优先于历史讨论。
 - 用户确认的术语、事实、范围和风格要传播到后续产物。
 - 用户仍在讨论时只给判断、取舍和下一步，不提前写完整文章。
+- 新写、重写或大改先明确文章契约：读者、真实问题、默认选择或根定义、什么会改变它、非目标。
 - 标题、表、图和文字必须形成单一路径；页面割裂时先修视觉中心、分块和密度。
 - 不把用户好句子改成无辨识度的 AI 书面语；不为完整感扩项。
 - 名称性信息用 **加粗**；可执行代码仅用代码块。
+- 路由器不复述 writer 的细节规则；判断账本、证据位置和无损压缩由对应 writer 负责。
 
 ## 图与审查
 
