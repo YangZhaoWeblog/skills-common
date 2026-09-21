@@ -1,6 +1,6 @@
 ---
 name: td-logic-writing-flow
-description: Route and control MyDigitalGarden/Obsidian writing tasks with a logic-first, concise, no-fluff workflow. Use when the user asks to write, rewrite, restructure, polish, de-AI, outline, review, or continue an Obsidian article or personal knowledge note, especially when deciding whether the task belongs to td-logic-writer, knowledge-illustrator, imagegen, tech-doc-writer, atomic notes, MOC, deep-learn/light-learn, DAG, or casual idea capture. It enforces stage control, skeleton-first gates for new/rewrite/large edits, visual QA for illustrated articles, independent Review Gate for substantial/high-impact articles, and routing back to the right skill instead of blindly generating a full article.
+description: Route and control MyDigitalGarden/Obsidian writing tasks with a logic-first, concise, no-fluff workflow. Use when the user asks to write, rewrite, restructure, polish, de-AI, outline, review, or continue an Obsidian article or personal knowledge note, especially when deciding whether the task belongs to td-logic-writer, knowledge-illustrator, imagegen, tech-doc-writer, atomic notes, MOC, deep-learn/light-learn, DAG, or casual idea capture. It enforces stage control, skeleton-first gates for new/rewrite/large edits, visual QA for illustrated articles, a mandatory independent Review Gate for substantial/high-impact articles, and routing back to the right skill instead of blindly generating a full article.
 ---
 
 # TD Logic Writing Flow
@@ -16,9 +16,21 @@ description: Route and control MyDigitalGarden/Obsidian writing tasks with a log
 | 成文 | 按确认骨架写正文 |
 | 修改 | 读取当前文和用户改动后局部或整体修改 |
 | 复盘 | 可复用的正反模式 |
-| 审查 | 独立 Review 结论 |
+| 审查 | 独立 Review 结论；未完成则不可交付 |
 
 新写、重写、大改默认先给骨架；用户明确要求直接写时，仍先用短段说明任务和骨架方向。
+
+## 硬性审查闸门
+
+- 新写、重写、大改、高影响或带图的个人文章，必须在最终写入目标文件或交付前完成独立 Review；这不是建议，也不能用作者自审替代。
+- 在 Review `pass` 之前，不得创建、覆盖或修改最终目标路径；候选稿只能写入明确标记的 draft/temp 路径。`pass` 后才能提升到目标路径，并重新读取最终文件验证内容一致。
+- 独立 Review 必须由独立 reviewer 调用或隔离的评审上下文完成。作者再次阅读、同一上下文切换成“审查者口吻”、或依据 checklist 自查，都不算独立 Review。
+- 触发 Review Gate 时必须生成不可变的 `gate_id`，绑定规范化绝对路径、解析后的真实路径或文件身份；换会话、换任务名、移动或改名都不能重置它。缺少或丢失 `gate_id` 时状态为 `blocked`。
+- Review 结果必须可复核地记录：`gate_id`、规范化目标路径或文章身份、候选版本的 SHA-256、系统生成的 reviewer 调用 ID、原始返回结果或隔离会话 ID/审计记录、Review 包范围、结论、复审轮次和剩余风险。reviewer 必须实际收到并审查该 SHA-256 对应的版本；不能用手写 reviewer 名称、未定义的“隔离证据”或旧版本结论代替。
+- `pass` 才能交付；`minor`、`structural`、`factual` 或 `visual` 都必须先修复，再由独立 reviewer 复核最终版本。提升到最终目标路径后，必须重新计算最终文件 SHA-256，并与 reviewer 审查的候选版本一致；路径身份或哈希不一致时为 `blocked`。`blocked` 必须停止交付并报告阻塞。
+- 如果环境具备独立子代理或隔离评审能力，必须实际调用；未尝试已有能力，不得声称“没有独立 reviewer”。没有独立 reviewer 能力，或缺少实际调用/隔离证据时，状态必须是“Review Gate 未完成/阻塞”；不得把自审写成独立 Review，也不得报告任务已完成。可以保留候选草稿，但不得将其作为最终成品交付。
+- 错别字、局部润色和用户明确限定的快速小改，仅在文章尚未触发 Review Gate 时豁免；一旦单次或累计修改影响判断、结构、事实或视觉层级，必须在下一次写入前升级到独立 Review，不得通过连续小改规避。
+- 一旦同一文章触发 Review Gate，按 `gate_id` 和规范化目标路径或文章身份记录状态；后续所有会话、任务和修改都继承 Review Gate，不得通过拆成多个“小改”、换会话、换路径或改任务名称规避。首次 reviewer 调用为第一轮，最多只有一次复审；轮次必须绑定 `gate_id`，不得重置。
 
 ## 路由
 
@@ -48,7 +60,7 @@ description: Route and control MyDigitalGarden/Obsidian writing tasks with a log
 
 正式技术文档的状态、时序和 ER 图由 **tech-doc-writer** 使用 Mermaid、DBML 等可编辑格式。需要自定义布局或文章配图时，调用 **knowledge-illustrator**。精确关系不用生成式位图。
 
-个人文章的新写、重写、大改、高影响或带图任务，读取 [review-gate.md](references/review-gate.md) 并启动独立 reviewer；带图再读 [visual-checklist.md](references/visual-checklist.md)。正式技术文档只使用 **tech-doc-writer** 的 Review Gate。小改仍需自审。
+个人文章的新写、重写、大改、高影响或带图任务，必须读取 [review-gate.md](references/review-gate.md)，先准备最小 Review 包并启动独立 reviewer；没有独立 reviewer 时必须阻塞。带图再读 [visual-checklist.md](references/visual-checklist.md)。正式技术文档只使用 **tech-doc-writer** 的 Review Gate。小改仍需自审。
 
 ## 复盘
 

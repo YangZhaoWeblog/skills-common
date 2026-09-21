@@ -1,6 +1,16 @@
 # Review Gate
 
-独立 reviewer 只负责发现 writer 看不见的问题，不改原文。
+这是新写、重写、大改、高影响或带图个人文章的**强制交付闸门**。独立 reviewer 只负责发现 writer 看不见的问题，不改原文。
+
+## 硬性规则
+
+- 最终成品在独立 Review `pass` 前不得交付。新写或大改时，不得创建、覆盖或修改最终目标路径；候选稿只能写入明确标记的 draft/temp 路径，`pass` 后才能提升到目标路径。
+- 独立 reviewer 必须来自独立调用、子代理或隔离评审上下文。writer 自己重新读一遍、自己套 checklist，或在同一上下文中临时扮演 reviewer，都不算。
+- 如果环境具备独立子代理或隔离评审能力，必须实际调用；未尝试已有能力，不得声称“没有独立 reviewer”。没有独立 reviewer 能力，或缺少实际调用/隔离证据时，Review Gate 状态为 `blocked`。必须停下并向用户说明“独立 Review 未完成”，不能用自审替代，也不能报告完成。
+- 触发 Review Gate 时必须生成不可变的 `gate_id`，绑定规范化绝对路径、解析后的真实路径或文件身份；换会话、换任务名、移动或改名都不能重置它。缺少或丢失 `gate_id` 时状态为 `blocked`。
+- Review 结论必须在交付记录中留下 `gate_id`、规范化目标路径或文章身份、候选版本的 SHA-256、系统生成的 reviewer 调用 ID、原始返回结果或隔离会话 ID/审计记录、Review 包、轮次、结论和剩余风险。reviewer 必须实际收到并审查该 SHA-256 对应的版本；手写 reviewer 名称、手写“已通过”或未定义的“隔离证据”不算证据。
+- Review 之后的任何内容改动都会使原结论失效；最终版本必须重新交给独立 reviewer 确认，并核对版本路径和 SHA-256。提升到最终目标路径后，最终文件 SHA-256 必须与 reviewer 审查的候选版本一致；路径身份或哈希不一致时为 `blocked`。
+- 一旦同一文章触发 Review Gate，按 `gate_id` 和规范化目标路径或文章身份记录状态；后续所有会话、任务和修改都继承 Review Gate，不得通过拆分成多个“小改”、换会话、换路径或改任务名称规避独立 Review。首次 reviewer 调用为第一轮，最多只有一次复审；轮次必须绑定 `gate_id`，不得重置。
 
 ## 触发
 
@@ -8,7 +18,7 @@
 - 用户明确要求审查。
 - 自审发现标题链、事实或视觉结构不稳。
 
-错别字、局部润色和用户明确要求的快速改动不强制触发。
+错别字、局部润色和用户明确要求的快速改动，仅在文章尚未触发 Review Gate 时不强制触发；已触发 Gate 的文章不享受该豁免。
 
 ## 最小 Review 包
 
@@ -23,6 +33,31 @@
 
 reviewer 只读 Review 包、目标文章、必要事实源和 checklist；带图时附视觉检查表和图片路径；不读完整聊天、writer 中间推理或预期答案。
 
+Review 包不能包含 writer 的预期结论、怀疑的问题、修复方案或要求 reviewer 证明的答案；否则 reviewer 只是在确认 writer 的判断，不是独立审查。
+
+## Review 记录与状态
+
+交付记录至少保留以下字段；缺少任一字段时，状态为 `blocked`：
+
+```text
+gate_id: 不可变 Gate 标识
+article_id: 稳定文章身份
+target_realpath: 规范化目标真实路径或文件身份
+candidate_sha256: reviewer 实际收到的候选版本哈希
+review_package_sha256: Review 包哈希
+reviewer_call_id: 系统生成的独立调用 ID
+reviewer_result: 原始返回结果或隔离审计记录
+round: 1 或 2
+state: triggered | reviewing | needs_fix | pass | invalidated | blocked
+final_sha256: pass 后最终目标文件哈希
+```
+
+状态只能按以下路径推进：
+
+`triggered → reviewing → pass`，或 `triggered → reviewing → needs_fix → reviewing → pass`。
+
+任何版本改动都会将 `pass` 变为 `invalidated`；第二轮仍为非 `pass` 时变为 `blocked`，不得重置 `gate_id` 或重新计为第一轮。候选哈希、Review 包哈希、reviewer 原始结果和最终哈希必须指向同一最终交付版本。
+
 ## Review 重点
 
 - 标题和视觉中心是否让读者看见默认选择、边界或行动路径。
@@ -35,14 +70,14 @@ reviewer 只读 Review 包、目标文章、必要事实源和 checklist；带�
 | 结论 | 处理 |
 | --- | --- |
 | pass | 可交付 |
-| minor | writer 修复后自审 |
-| structural | 回到骨架 |
-| factual | 停止并查证 |
-| visual | 先改图文分工 |
-| blocked | 向用户确认目标、边界或事实 |
+| minor | writer 修复后由独立 reviewer 复核最终版本 |
+| structural | 回到骨架，修复后重新 Review |
+| factual | 停止并查证，修复后重新 Review |
+| visual | 先改图文分工，修复后重新 Review |
+| blocked | 不交付，向用户报告阻塞 |
 
-报告只写：结论、问题位置、问题为何影响阅读或准确性、必须修复项、剩余风险。
+报告只写：目标路径、候选版本标识或内容哈希、reviewer 标识、实际调用结果或隔离上下文证据、结论、问题位置、问题为何影响阅读或准确性、必须修复项、剩余风险和复审轮次。
 
 ## 熔断
 
-最多复审一次。第二轮仍为 structural、factual、visual 或 blocked 时停止硬改，报告卡点。
+最多复审一次。第二轮仍为 `minor`、`structural`、`factual`、`visual` 或 `blocked` 时，统一转为 `blocked`，不得交付，报告卡点；不得通过换会话、换路径或新建 `gate_id` 重新开始。
