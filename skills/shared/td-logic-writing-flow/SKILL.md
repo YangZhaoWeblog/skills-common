@@ -26,8 +26,13 @@ description: Route and control MyDigitalGarden/Obsidian writing tasks with a log
 
 - **文档类型：** 写给别人理解的文章、个人系统/决策文档，还是正式团队技术文档。
 - **主推进模式：** 收窄选择空间、根原则推导系统、逐层建立理解，或案例验证判断。
+- **文章身份：** 文件名要能覆盖全文真正处理的对象和范围；不能用某个局部工具或章节给整篇文章命名。
 
 每节都必须改变读者状态：缩小候选、解决疑问、升级模型、验证判断、澄清边界或确定下一步。只增加同层信息的章节不是推进，应合并、移位或删除。详见 [progression-modes.md](../td-logic-writer/references/progression-modes.md)。
+
+当前成品只写当前系统。用户删掉或否定的对象不得以历史说明、替代说明或编辑旁白回到正文；写作和审查时读取 [current-content-integrity.md](../td-logic-writer/references/current-content-integrity.md)。
+
+文件名、一级标题和正文必须形成闭环：只看文件名和一级标题，读者应能复述文章的主问题与推进路径；如果文件名讲 A、标题链实际讲 B/C/D，先回到骨架改文章身份，不要只润色标题。
 
 ## 硬性审查闸门
 
