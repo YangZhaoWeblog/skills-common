@@ -14,6 +14,7 @@ description: Write or revise concise, evidence-aware judgment articles for perso
 - [style-rules.md](references/style-rules.md)
 - [writing-workflow.md](references/writing-workflow.md)
 - [review-checklist.md](references/review-checklist.md)
+- [progression-modes.md](references/progression-modes.md)
 
 只做快速审查时先读 [review-checklist.md](references/review-checklist.md)，必要时再读另外两份。
 
@@ -28,6 +29,7 @@ Use this skill when the article is doing sensemaking: turning facts, options, co
 - 判断标准文：把“合格/优秀/不合格”压成可自检标准。
 - 决策型调研文：把复杂选项压成原则、排序、执行路径。
 - 个人策略文：医美、两性、职业、生活决策等，只要目标是形成判断框架。
+- 个人系统/决策文档：让未来的自己或会议参与者按同一原则运行时间、注意力、任务、资金或其他个人资源。
 
 不要用于：
 
@@ -49,14 +51,18 @@ Use this skill when the article is doing sensemaking: turning facts, options, co
 | 项目认知 | 责任边界、关键关系与负责人的判断点 |
 | 判断标准 | 可复用的判断条件、反例与动作 |
 | 证据型决策 | 默认选择、改变选择的条件、候选结论与停止条件 |
+| 个人系统/决策文档 | 核心损失、根原则、判断流程、动作边界与反馈机制 |
 
 具体骨架、证据位置和压缩步骤见 [writing-workflow.md](references/writing-workflow.md)。
 
 ## Core Rules
 
 - 先写文章契约：读者、真实问题、默认选择或根定义、什么会改变它；不服务这些项的信息不进正文。
+- 个人系统/决策文档还必须写清：不建立规则会反复损失什么、系统管理的核心对象是什么、对象之间谁先判断谁、容量不足时如何拒绝新增承诺。
+- 复杂文章先选一个主推进模式：收窄选择空间、根原则推导系统、逐层建立理解或案例验证判断；主模式决定章节关系，不得把规则平铺成目录。
 - 结构先于句子：先修标题链和章节职责，再润色文字。
 - 标题链必须递进：后文依赖前文，不做百科式平铺；中文线性长文、判断文章和项目认知文章的一级标题默认使用 `一、二、三、四` 编号，非线性内容、短笔记、局部小改或已有稳定格式不强制重排。
+- 后一节必须由前一节产生：它要缩小候选、解决前文疑问、推出新规则、验证判断或确定行动；否则回到骨架。
 - 标题层级连续；不要从一级标题直接跳到三级标题。
 - 一级标题不超过 8 个；超过说明范围过大，要拆文或压缩。
 - 每节只回答一个判断问题；同一结论的不同解释不要拆成多个章节。
