@@ -5,7 +5,7 @@ description: Route and control MyDigitalGarden/Obsidian writing tasks with a log
 
 # TD Logic Writing Flow
 
-这是路由器，不是另一个 writer。先识别文档类型和主推进模式，再进入对应链路。
+这是路由器，不是另一个 writer。先识别文档类型和阅读组织方式，再进入对应链路。
 
 ## 阶段
 
@@ -25,14 +25,14 @@ description: Route and control MyDigitalGarden/Obsidian writing tasks with a log
 写作前必须同时确定：
 
 - **文档类型：** 写给别人理解的文章、个人系统/决策文档，还是正式团队技术文档。
-- **主推进模式：** 收窄选择空间、根原则推导系统、逐层建立理解，或案例验证判断。
+- **阅读组织方式：** 按任务选择推导、比较、逐层理解、案例验证或并列查阅等方式，不固定四选一。
 - **文章身份：** 文件名要能覆盖全文真正处理的对象和范围；不能用某个局部工具或章节给整篇文章命名。
 
-每节都必须改变读者状态：缩小候选、解决疑问、升级模型、验证判断、澄清边界或确定下一步。只增加同层信息的章节不是推进，应合并、移位或删除。详见 [progression-modes.md](../td-logic-writer/references/progression-modes.md)。
+章节按对象关系与阅读依赖组织；必要的定义、并列分类和证据各有职责，不强制后一节由前一节推出。详见 [progression-modes.md](../td-logic-writer/references/progression-modes.md)。
 
-当前成品只写当前系统。用户删掉或否定的对象不得以历史说明、替代说明或编辑旁白回到正文；写作和审查时读取 [current-content-integrity.md](../td-logic-writer/references/current-content-integrity.md)。
+当前成品遵循已确认范围，删除无关编辑旁白，保留任务所需的真实对比与历史证据；写作和审查时读取 [current-content-integrity.md](../td-logic-writer/references/current-content-integrity.md)。
 
-文件名、一级标题和正文必须形成闭环：只看文件名和一级标题，读者应能复述文章的主问题与推进路径；如果文件名讲 A、标题链实际讲 B/C/D，先回到骨架改文章身份，不要只润色标题。
+文件名、一级标题和正文的对象与范围应一致；标题链呈现结构，不必复述结论。标题选型与正反 schema 交给 [style-rules.md](../td-logic-writer/references/style-rules.md)。
 
 ## 硬性审查闸门
 
@@ -65,7 +65,7 @@ description: Route and control MyDigitalGarden/Obsidian writing tasks with a log
 - 用户确认的术语、事实、范围和风格要传播到后续产物。
 - 用户仍在讨论时只给判断、取舍和下一步，不提前写完整文章。
 - 新写、重写或大改先明确文章契约：读者、真实问题、默认选择或根定义、什么会改变它、非目标。
-- 个人系统/决策文档额外明确：核心损失、核心对象、对象之间的先后关系和容量边界。
+- 个人系统/决策文档明确核心对象、关系和规则依据；涉及稀缺资源或持续承诺时再检查容量边界。
 - 骨架阶段为每节标注 **读者任务 → 主载体**；表格只用于真实横向比较，具体判定交给对应 writer。
 - 标题、表、图和文字必须形成单一路径；页面割裂时先修视觉中心、分块和密度。
 - 不把用户好句子改成无辨识度的 AI 书面语；不为完整感扩项。
