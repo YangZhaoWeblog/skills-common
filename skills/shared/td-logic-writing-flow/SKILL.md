@@ -30,7 +30,7 @@ description: Route and control MyDigitalGarden/Obsidian writing tasks with a log
 
 章节按对象关系与阅读依赖组织；必要的定义、并列分类和证据各有职责，不强制后一节由前一节推出。详见 [progression-modes.md](../td-logic-writer/references/progression-modes.md)。
 
-路由到 td-logic-writer 的个人文章与解释型博文，按使用情境选择解释量，以读者是否需要自行补关键关系为标准；写作和审查时读取 [current-content-integrity.md](../td-logic-writer/references/current-content-integrity.md)。正式技术文档的解释量、正文范围、骨架与审查均遵循 tech-doc-writer，不套用此 reference 中的会议示例与规则。
+路由到 td-logic-writer 的个人文章与解释型博文，以尽可能少的阅读成本支持正确理解或使用，受准确性、必要关系和关键边界约束；写作、压缩和审查统一读取 [current-content-integrity.md](../td-logic-writer/references/current-content-integrity.md) 的最小充分解释与删除检验。正式技术文档的解释量、正文范围、骨架与审查均遵循 tech-doc-writer，不套用此 reference 中的会议示例与规则。
 
 文件名、一级标题和正文的对象与范围应一致；标题链呈现结构，不必复述结论。标题选型与正反 schema 交给 [style-rules.md](../td-logic-writer/references/style-rules.md)。
 
@@ -68,7 +68,7 @@ description: Route and control MyDigitalGarden/Obsidian writing tasks with a log
 - 新写、重写或大改先明确文章契约：读者、使用情境、真实问题、需要理解的关系或形成的判断、适用边界、非目标；可先探讨本质再形成选择。
 - 个人系统/决策文档明确核心对象、关系和规则依据；涉及稀缺资源或持续承诺时再检查容量边界。
 - 骨架阶段为每节标注 **读者任务 → 主载体**；表格只用于真实横向比较，具体判定交给对应 writer。
-- 标题、表、图和文字必须形成单一路径；页面割裂时先修视觉中心、分块和密度。
+- 标题、表、图和文字应形成清楚的阅读或查阅路径；先检查话题与使用场景切换、章节职责和顺序，再处理视觉中心与句子压缩。
 - 不把用户好句子改成无辨识度的 AI 书面语；不为完整感扩项。
 - 中文线性文章默认使用 `一、二、三、四` 一级标题；加粗承担第二阅读路径；可执行代码仅用代码块。具体密度和例外交给对应 writer。
 - 路由器不复述 writer 的细节规则；判断账本、证据位置和无损压缩由对应 writer 负责。
