@@ -40,22 +40,22 @@ Project scope is the default. `-g` switches to user-level installation.
 Install only one skill from this repository.
 
 ```bash
-npx skills@latest add YangZhaoWeblog/skills-common --skill razor -y
+npx skills@latest add YangZhaoWeblog/skills-common --skill td-logic-writer -y
 ```
 
 Install one local skill directory.
 
 ```bash
-npx skills@latest add /Users/yangzhao/Code/skills-common/skills/shared/razor -y
+npx skills@latest add /Users/yangzhao/Code/skills-common/skills/shared/td-logic-writer -y
 ```
 
 Use one skill without installing it.
 
 ```bash
-npx skills@latest use YangZhaoWeblog/skills-common@razor
+npx skills@latest use YangZhaoWeblog/skills-common@td-logic-writer
 ```
 
-Replace `razor` with the target skill name. Add `-g` to install that single skill globally.
+Replace `td-logic-writer` with the target skill name. Add `-g` to install that single skill globally.
 
 * * *
 
@@ -63,13 +63,18 @@ Replace `razor` with the target skill name. Add `-g` to install that single skil
 
 | Skill | What it does |
 | --- | --- |
-| [td-external-agent](skills/shared/td-external-agent/README.md) | Delegate tasks to Codex, Claude Code or CodeBuddy CLI; follow results and resume explicit sessions. |
-| `knowledge-illustrator` | Turn concepts into clean diagrams and visual aids. |
-| `razor` | Keep responses dense, terse, and actionable. |
-| `td-logic-writer` | Write concise judgment-system articles from messy notes. |
-| `td-logic-writing-flow` | Route Obsidian writing tasks and enforce review gates. |
-| `tech-doc-writer` | Draft technical docs with a structured pipeline. |
+| [knowledge-illustrator](skills/shared/knowledge-illustrator/SKILL.md) | Turn concepts into clean diagrams and visual aids. |
+| [td-logic-writer](skills/shared/td-logic-writer/SKILL.md) | Write concise judgment-system articles from messy notes. |
+| [td-logic-writing-flow](skills/shared/td-logic-writing-flow/SKILL.md) | Route Obsidian writing tasks and enforce review gates. |
+| [tech-doc-writer](skills/shared/tech-doc-writer/SKILL.md) | Draft technical docs with a structured pipeline. |
+| [td-external-agent](skills/shared/td-external-agent/SKILL.md) | Delegate tasks to Codex, Claude Code or CodeBuddy CLI. |
+
+### Deprecated
+
+| Skill | Status |
+| --- | --- |
+| [razor](skills/deprecated/razor/SKILL.md) | Deprecated; retained for reference. |
 
 ## Layout
 
-**skills/shared/** contains the reusable skills: **skills-common** covers shared capabilities, [skills-develop](../skills-develop/README.md) covers development workflows, and [skills-learning](../skills-learning/README.md) covers learning workflows.
+**skills/shared/** contains maintained skills; **skills/deprecated/** retains deprecated skills. **skills-common** covers shared capabilities, [skills-develop](../skills-develop/README.md) covers development workflows, and [skills-learning](../skills-learning/README.md) covers learning workflows.

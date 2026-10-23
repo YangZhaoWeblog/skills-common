@@ -40,22 +40,22 @@ npx skills@latest add YangZhaoWeblog/skills-common -g -y
 只安装仓库里的一个 skill：
 
 ```bash
-npx skills@latest add YangZhaoWeblog/skills-common --skill razor -y
+npx skills@latest add YangZhaoWeblog/skills-common --skill td-logic-writer -y
 ```
 
 只安装一个本地 skill 目录：
 
 ```bash
-npx skills@latest add /Users/yangzhao/Code/skills-common/skills/shared/razor -y
+npx skills@latest add /Users/yangzhao/Code/skills-common/skills/shared/td-logic-writer -y
 ```
 
 不安装，直接生成单个 skill 的使用 prompt：
 
 ```bash
-npx skills@latest use YangZhaoWeblog/skills-common@razor
+npx skills@latest use YangZhaoWeblog/skills-common@td-logic-writer
 ```
 
-把 `razor` 或本地路径换成目标 skill；要全局安装这个单个 skill 时加 `-g`。
+把 `td-logic-writer` 或本地路径换成目标 skill；要全局安装这个单个 skill 时加 `-g`。
 
 * * *
 
@@ -63,13 +63,18 @@ npx skills@latest use YangZhaoWeblog/skills-common@razor
 
 | Skill | 作用 |
 | --- | --- |
-| [td-external-agent](skills/shared/td-external-agent/README.md) | 将任务交给外部 CLI，跟进结果与恢复会话；可独立使用，也可接入项目角色。 |
-| `knowledge-illustrator` | 把概念画成清晰的图。 |
-| `razor` | 保持回答密度高、冗余低。 |
-| `td-logic-writer` | 把混乱材料写成精炼的判断系统型文章。 |
-| `td-logic-writing-flow` | 分流 Obsidian 写作任务，并执行骨架门与审查门。 |
-| `tech-doc-writer` | 用结构化流程写技术文档。 |
+| [knowledge-illustrator](skills/shared/knowledge-illustrator/SKILL.md) | 把概念画成清晰的图。 |
+| [td-logic-writer](skills/shared/td-logic-writer/SKILL.md) | 把混乱材料写成精炼的判断系统型文章。 |
+| [td-logic-writing-flow](skills/shared/td-logic-writing-flow/SKILL.md) | 分流 Obsidian 写作任务，并执行骨架门与审查门。 |
+| [tech-doc-writer](skills/shared/tech-doc-writer/SKILL.md) | 用结构化流程写技术文档。 |
+| [td-external-agent](skills/shared/td-external-agent/SKILL.md) | 调用 Codex、Claude Code 或 CodeBuddy CLI 执行任务。 |
+
+### 已废弃
+
+| Skill | 状态 |
+| --- | --- |
+| [razor](skills/deprecated/razor/SKILL.md) | 已废弃，保留作参考。 |
 
 ## 目录
 
-技能位于 **skills/shared/**：**skills-common** 维护通用能力，[skills-develop](../skills-develop/README.zh-CN.md) 维护开发工作流，[skills-learning](../skills-learning/README.zh-CN.md) 维护学习工作流。
+活跃技能位于 **skills/shared/**，已废弃技能位于 **skills/deprecated/**：**skills-common** 维护通用能力，[skills-develop](../skills-develop/README.zh-CN.md) 维护开发工作流，[skills-learning](../skills-learning/README.zh-CN.md) 维护学习工作流。
