@@ -15,18 +15,6 @@
 
 * * *
 
-## 放这里
-
-- 在学习和开发两个场景里都能复用的 skill 逻辑
-- 需要给多个仓库共用的通用行为
-- 仍然足够宽泛、可以保持通用的 skill 辅助能力
-
-## 不放这里
-
-- 外部一次性安装品
-- 只适用于学习场景的内容
-- 只适用于工程工作流的内容
-
 ## 安装
 
 ### 项目级
@@ -75,6 +63,7 @@ npx skills@latest use YangZhaoWeblog/skills-common@razor
 
 | Skill | 作用 |
 | --- | --- |
+| [external-agent](skills/shared/external-agent/README.md) | 将任务交给外部 CLI，跟进结果与恢复会话；可独立使用，也可接入项目角色。 |
 | `knowledge-illustrator` | 把概念画成清晰的图。 |
 | `razor` | 保持回答密度高、冗余低。 |
 | `td-logic-writer` | 把混乱材料写成精炼的判断系统型文章。 |
@@ -83,9 +72,4 @@ npx skills@latest use YangZhaoWeblog/skills-common@razor
 
 ## 目录
 
-- `skills/shared/`
-
-兄弟仓库：
-
-- [skills-develop](../skills-develop/README.zh-CN.md)
-- [skills-learning](../skills-learning/README.zh-CN.md)
+技能位于 **skills/shared/**：**skills-common** 维护通用能力，[skills-develop](../skills-develop/README.zh-CN.md) 维护开发工作流，[skills-learning](../skills-learning/README.zh-CN.md) 维护学习工作流。

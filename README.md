@@ -15,18 +15,6 @@ English | [中文](README.zh-CN.md)
 
 * * *
 
-## What belongs here
-
-- shared skill logic useful across learning and development contexts
-- reusable general-purpose behaviors that should stay available to multiple repos
-- skill helpers that are still broad enough to remain common
-
-## What stays out
-
-- external one-off installs
-- workflow-specific learning content
-- workflow-specific engineering flows
-
 ## Install
 
 ### Project scope
@@ -75,6 +63,7 @@ Replace `razor` with the target skill name. Add `-g` to install that single skil
 
 | Skill | What it does |
 | --- | --- |
+| [external-agent](skills/shared/external-agent/README.md) | Delegate tasks to Codex, Claude Code or CodeBuddy CLI; follow results and resume explicit sessions. |
 | `knowledge-illustrator` | Turn concepts into clean diagrams and visual aids. |
 | `razor` | Keep responses dense, terse, and actionable. |
 | `td-logic-writer` | Write concise judgment-system articles from messy notes. |
@@ -83,9 +72,4 @@ Replace `razor` with the target skill name. Add `-g` to install that single skil
 
 ## Layout
 
-- `skills/shared/`
-
-Sibling repos:
-
-- [skills-develop](../skills-develop/README.md)
-- [skills-learning](../skills-learning/README.md)
+**skills/shared/** contains the reusable skills: **skills-common** covers shared capabilities, [skills-develop](../skills-develop/README.md) covers development workflows, and [skills-learning](../skills-learning/README.md) covers learning workflows.
