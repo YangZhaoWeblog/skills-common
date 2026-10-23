@@ -63,7 +63,7 @@ npx skills@latest use YangZhaoWeblog/skills-common@razor
 
 | Skill | 作用 |
 | --- | --- |
-| [external-agent](skills/shared/external-agent/README.md) | 将任务交给外部 CLI，跟进结果与恢复会话；可独立使用，也可接入项目角色。 |
+| [td-external-agent](skills/shared/td-external-agent/README.md) | 将任务交给外部 CLI，跟进结果与恢复会话；可独立使用，也可接入项目角色。 |
 | `knowledge-illustrator` | 把概念画成清晰的图。 |
 | `razor` | 保持回答密度高、冗余低。 |
 | `td-logic-writer` | 把混乱材料写成精炼的判断系统型文章。 |

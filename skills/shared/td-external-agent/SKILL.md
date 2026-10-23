@@ -1,5 +1,5 @@
 ---
-name: external-agent
+name: td-external-agent
 description: 通过 Codex、Claude Code 或 CodeBuddy CLI 派发、观察、恢复和停止独立外部 Agent；角色与模型由调用方指定。
 ---
 

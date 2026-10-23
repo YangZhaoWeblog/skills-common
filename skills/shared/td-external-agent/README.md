@@ -6,7 +6,7 @@
 
 准备好已安装、已登录的 CLI，然后告诉主 Agent：
 
-> $external-agent 用 CodeBuddy 整理当前项目的公开 API，只读。模型用〈模型 ID〉，effort 用 medium。
+> $td-external-agent 用 CodeBuddy 整理当前项目的公开 API，只读。模型用〈模型 ID〉，effort 用 medium。
 
 替换模型 ID 即可。**CLI、模型、effort 缺什么问什么，不擅自默认。** 也可让主 Agent 读取已有角色配置；本次明确指令优先。操作范围由主 Agent 按任务和已有授权确定。
 

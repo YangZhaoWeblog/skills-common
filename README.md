@@ -63,7 +63,7 @@ Replace `razor` with the target skill name. Add `-g` to install that single skil
 
 | Skill | What it does |
 | --- | --- |
-| [external-agent](skills/shared/external-agent/README.md) | Delegate tasks to Codex, Claude Code or CodeBuddy CLI; follow results and resume explicit sessions. |
+| [td-external-agent](skills/shared/td-external-agent/README.md) | Delegate tasks to Codex, Claude Code or CodeBuddy CLI; follow results and resume explicit sessions. |
 | `knowledge-illustrator` | Turn concepts into clean diagrams and visual aids. |
 | `razor` | Keep responses dense, terse, and actionable. |
 | `td-logic-writer` | Write concise judgment-system articles from messy notes. |
