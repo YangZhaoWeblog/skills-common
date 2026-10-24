@@ -34,11 +34,20 @@ Use <tclaude> as the Reviewer to review the current changes without modifying fi
 Use model <model ID> and effort <high>.
 ```
 
-Each invocation needs `<CLI, Model, Effort>`. If any value is missing, the Skill asks you first.
+**Save a role without running a task**
+
+```text
+$td-external-agent
+
+Configure <tclaude> as the project's Coder for future use. Do not run a task now.
+Use model <model ID> and effort <medium>.
+```
+
+Both execution and saving need `<CLI, Model, Effort>`. If any value is missing, the Skill asks you first.
 
 ## 2. Save as a project role
 
-After using an external agent, you can save the invocation as a project role for reuse.
+Configure a role upfront or save it after a task, then reuse it in your project.
 
 > Save this invocation as the project's Coder? I will add the role configuration and an entry point, recording tcodex, `<model ID>` and high for future use.
 
