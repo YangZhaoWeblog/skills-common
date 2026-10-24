@@ -1,45 +1,47 @@
+<p align="right">English | <a href="README.zh-CN.md">中文</a></p>
+
 # td-external-agent
 
-**把其他 AI Coding CLI，当作你的独立 Agent。**
+**Use other AI coding CLIs as your independent agents.**
 
-支持 **CodeBuddy、tcodex 和 tclaude**，可指定模型和 effort，用于编码、审查或调研。
+Supports **CodeBuddy, tcodex and tclaude**. Choose a model and effort level for coding, reviews or research.
 
-[![当前会话通过 td-external-agent 选择一个 CLI，将任务交给独立 Agent，并接收执行结果](assets/agent-overview.svg)](assets/agent-overview.svg)
+[![Your current session selects a CLI through td-external-agent, delegates a task to an independent agent, and receives the result](assets/agent-overview.en.svg)](assets/agent-overview.en.svg)
 
-## 一、快速开始
+## 1. Getting started
 
-在项目目录安装：
+Install in your project directory:
 
 ```bash
 npx skills@latest add YangZhaoWeblog/skills-common --skill td-external-agent -y
 ```
 
-**把外部 Agent 当 Coder**
+**Use an external agent as your Coder**
 
 ```text
 $td-external-agent
 
-用〈tcodex〉作为 Coder，按已批准的 Plan 编码并补测试，完成后报告。
-模型用〈模型 ID〉，effort 用〈High〉。
+Use <tcodex> as the Coder to implement the approved Plan and add tests. Report the results when finished.
+Use model <model ID> and effort <high>.
 ```
 
-**让另一个 Agent 独立审查**
+**Ask another agent for an independent review**
 
 ```text
 $td-external-agent
 
-用〈tclaude〉作为 Reviewer，只读审查本次改动，完成后报告问题和代码位置。
-模型用〈模型 ID〉，effort 用〈High〉。
+Use <tclaude> as the Reviewer to review the current changes without modifying files. Report findings with code locations.
+Use model <model ID> and effort <high>.
 ```
 
-派发前要明确 `<CLI, Model, Effort>` 三项；缺少任何一项，Skill 会先问你。
+Each invocation needs `<CLI, Model, Effort>`. If any value is missing, the Skill asks you first.
 
-## 二、保存为项目角色
+## 2. Save as a project role
 
-使用外部 Agent 后，可以把这次调用保存为项目角色，之后从项目入口直接复用。
+After using an external agent, you can save the invocation as a project role for reuse.
 
-> skill: 要把这次调用保存为项目里的 Coder 吗？我会一并添加角色配置和调用入口，记录 tcodex、〈模型 ID〉和 High，之后可直接复用。
+> Save this invocation as the project's Coder? I will add the role configuration and an entry point, recording tcodex, `<model ID>` and high for future use.
 
-**保存前，先展示要修改的文件和内容，得到你同意后再写入。**
+**Before saving, the agent shows the files and changes, then waits for your approval before writing.**
 
-不想保存就跳过，本次对话不再问。
+If you choose not to save, it skips this step and will not ask again in this conversation.
