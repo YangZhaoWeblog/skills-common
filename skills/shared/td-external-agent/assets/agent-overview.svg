@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="320" viewBox="0 0 1050 320" role="img" aria-labelledby="title desc">
+  <title id="title">在当前会话中调用外部 Agent</title>
+  <desc id="desc">当前 Codex 或 Claude Code 会话通过 td-external-agent 选择 tcodex、tclaude 或 CodeBuddy 中的一个 CLI，指定模型和 effort，将任务交给独立 Agent。该 Agent 可担任 Coder、Reviewer 或调研角色，结果返回当前会话验收。</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#faf9ff"/>
+      <stop offset="1" stop-color="#f3f1fc"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M2 1 8 5 2 9" fill="none" stroke="#8b7bb8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; fill: #292538; }
+    .heading { font-size: 24px; font-weight: 650; }
+    .body { font-size: 22px; }
+    .muted { font-size: 18px; fill: #746987; }
+    .accent { fill: #6b46c1; }
+    .connector { fill: none; stroke: #8b7bb8; stroke-width: 1.8; marker-end: url(#arrow); }
+  </style>
+  <rect x="1" y="1" width="1048" height="318" rx="20" fill="url(#background)" stroke="#e9e3f5"/>
+
+  <rect x="28" y="32" width="220" height="190" rx="14" fill="#fff" stroke="#e2dced"/>
+  <text x="54" y="75" class="heading">当前会话</text>
+  <text x="54" y="128" class="body">Codex</text>
+  <text x="54" y="164" class="body">Claude Code</text>
+  <text x="54" y="198" class="muted">你正在使用的工具</text>
+
+  <text x="288" y="108" class="muted" text-anchor="middle">派发</text>
+  <path d="M260 128 H316" class="connector"/>
+
+  <rect x="330" y="32" width="390" height="190" rx="14" fill="#f0eafb" stroke="#cdbce9"/>
+  <text x="525" y="75" class="heading accent" text-anchor="middle">td-external-agent</text>
+  <rect x="354" y="100" width="88" height="42" rx="8" fill="#fff" stroke="#ded4f0"/>
+  <rect x="454" y="100" width="100" height="42" rx="8" fill="#fff" stroke="#ded4f0"/>
+  <rect x="566" y="100" width="130" height="42" rx="8" fill="#fff" stroke="#ded4f0"/>
+  <text x="398" y="128" font-size="20" text-anchor="middle">tcodex</text>
+  <text x="504" y="128" font-size="20" text-anchor="middle">tclaude</text>
+  <text x="631" y="128" font-size="20" text-anchor="middle">CodeBuddy</text>
+  <text x="525" y="170" class="muted" text-anchor="middle">任选一个 CLI</text>
+  <text x="525" y="201" font-size="20" class="accent" text-anchor="middle">指定模型与 effort</text>
+
+  <text x="760" y="108" class="muted" text-anchor="middle">执行</text>
+  <path d="M734 128 H788" class="connector"/>
+
+  <rect x="802" y="32" width="220" height="190" rx="14" fill="#fff" stroke="#e2dced"/>
+  <text x="828" y="75" class="heading">独立 Agent</text>
+  <text x="828" y="119" font-size="20">Coder · 编码</text>
+  <text x="828" y="155" font-size="20">Reviewer · 审查</text>
+  <text x="828" y="191" font-size="20">调研 · 检索</text>
+
+  <path d="M912 234 V270 H138 V234" class="connector" stroke-dasharray="5 5"/>
+  <rect x="338" y="253" width="374" height="34" rx="17" fill="#f6f3fd"/>
+  <text x="525" y="276" class="muted" text-anchor="middle">交回结果，由当前会话验收</text>
+</svg>
