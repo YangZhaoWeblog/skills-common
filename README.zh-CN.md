@@ -67,7 +67,7 @@ npx skills@latest use YangZhaoWeblog/skills-common@td-logic-writer
 | [td-logic-writer](skills/shared/td-logic-writer/SKILL.md) | 把混乱材料写成精炼的判断系统型文章。 |
 | [td-logic-writing-flow](skills/shared/td-logic-writing-flow/SKILL.md) | 分流 Obsidian 写作任务，并执行骨架门与审查门。 |
 | [tech-doc-writer](skills/shared/tech-doc-writer/SKILL.md) | 用结构化流程写技术文档。 |
-| [td-external-agent](skills/shared/td-external-agent/SKILL.md) | 调用 Codex、Claude Code 或 CodeBuddy CLI 执行任务。 |
+| [td-external-agent](skills/shared/td-external-agent/README.zh-CN.md) | 调用 Codex、Claude Code 或 CodeBuddy CLI 执行任务。 |
 
 ### 已废弃
 

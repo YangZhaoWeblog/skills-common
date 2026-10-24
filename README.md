@@ -67,7 +67,7 @@ Replace `td-logic-writer` with the target skill name. Add `-g` to install that s
 | [td-logic-writer](skills/shared/td-logic-writer/SKILL.md) | Write concise judgment-system articles from messy notes. |
 | [td-logic-writing-flow](skills/shared/td-logic-writing-flow/SKILL.md) | Route Obsidian writing tasks and enforce review gates. |
 | [tech-doc-writer](skills/shared/tech-doc-writer/SKILL.md) | Draft technical docs with a structured pipeline. |
-| [td-external-agent](skills/shared/td-external-agent/SKILL.md) | Delegate tasks to Codex, Claude Code or CodeBuddy CLI. |
+| [td-external-agent](skills/shared/td-external-agent/README.md) | Delegate tasks to Codex, Claude Code or CodeBuddy CLI. |
 
 ### Deprecated
 
