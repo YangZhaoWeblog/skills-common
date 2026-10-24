@@ -1,23 +1,38 @@
-# External Agent
+# td-external-agent
 
-让主 Agent 通过 **Codex、Claude Code 或 CodeBuddy CLI** 执行任务，跟进结果、恢复会话或停止调用。支持独立使用，不依赖 Harness，也不限编码任务。
+在当前 **Codex** 或 **Claude Code** 会话中，可以通过 **CodeBuddy、tcodex 或 tclaude** 调用另一个独立 Agent。
 
-## 一、调用
+例如，在 **Codex** 会话里通过 **tclaude** 启动独立 **Agent**，并让它使用 **Opus 5.5、DeepSeek-V4.1-Flash-1017** 等模型。
 
-准备好已安装、已登录的 CLI，然后告诉主 Agent：
+## 一、快速开始
 
-> $td-external-agent 用 CodeBuddy 整理当前项目的公开 API，只读。模型用〈模型 ID〉，effort 用 medium。
+1.1 **把外部 Agent 当 Coder**
 
-替换模型 ID 即可。**CLI、模型、effort 缺什么问什么，不擅自默认。** 也可让主 Agent 读取已有角色配置；本次明确指令优先。操作范围由主 Agent 按任务和已有授权确定。
+```shell
+$td-external-agent
 
-## 二、保存与续用
+用〈tcodex〉作为 Coder，按已批准的 Plan 编码并补测试，完成后报告。
+模型用〈模型 ID〉，effort 用〈High〉。
+```
 
-执行后可选择固化为角色 Agent。**先看具体改动，批准后才保存配置和入口**；下次从入口读取，无需重填参数。不保存就不写；拒绝后，本次会话不再提醒，已固化的调用也不重复提示。
+1.2 **让另一个 Agent 独立审查**
 
-继续任务时指定原会话，Agent 先检查已有产物，避免重复或覆盖修改。任务完成以实际验收为准；停止未确认时暂停冲突写入。
+```shell
+$td-external-agent
 
-## 三、执行说明
+用  {tclaude cli}  作为独立 review, 审阅本次需求代码, 完成后报告结果
++ 模型用 {模型 ID}
++ effort 用 {high}
+```
 
-[执行规则](SKILL.md) · [Codex](references/codex.md) · [Claude Code](references/claude.md) · [CodeBuddy](references/codebuddy.md)
+派发前要明确 `<CLI, Model, Effort>` 三项；缺少任何一项，Skill 会先问你。
 
-调用方法与验证范围见对应平台说明。保存角色配置不授予后续任务写权限。
+## 二、保存为项目角色
+
+使用外部 Agent 后，可以把这次调用保存为项目角色，之后从项目入口直接复用。
+
+> skill: 要把这次调用保存为项目里的 Coder 吗？我会一并添加角色配置和调用入口，记录 tcodex、〈模型 ID〉和 High，之后可直接复用。
+
+**保存前，先展示要修改的文件和内容，得到你同意后再写入。**
+
+不想保存就跳过，本次对话不再问。

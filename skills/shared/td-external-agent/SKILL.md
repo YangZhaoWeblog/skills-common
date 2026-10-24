@@ -1,11 +1,11 @@
 ---
 name: td-external-agent
-description: 通过 Codex、Claude Code 或 CodeBuddy CLI 派发、观察、恢复和停止独立外部 Agent；角色与模型由调用方指定。
+description: 将任务交给另一个 CLI 会话中独立运行的 Agent；支持通过 tcodex、tclaude 或 CodeBuddy 派发、跟进、恢复和停止。
 ---
 
 # 外部 Agent
 
-主控调用原生 CLI；任务与角色由调用方指定，**不依赖 Harness 或固定角色**。受派执行者完成任务，不因读取本 Skill 再次派发自己。
+当你要把任务交给**当前会话之外、由另一个 CLI 启动的独立 Agent**时，使用本 Skill。比如在 Codex 对话里让 tcodex 启动一个 Coder，或让 tclaude 启动一个 Reviewer。主 Agent 负责选择 CLI、模型与 effort，传入任务后跟进和验收结果。“外部”指另一个独立 CLI 会话，不是第三方服务。
 
 ## 一、派发
 
