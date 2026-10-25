@@ -4,7 +4,7 @@
 
 **把其他 AI Coding CLI，当作你的独立 Agent。**
 
-支持 **CodeBuddy、tcodex 和 tclaude**，可指定模型和 effort，用于编码、审查或调研。
+支持 **CodeBuddy、tcodex、tclaude 和 DSH**，可指定模型和 effort，用于编码、审查或调研。
 
 [![当前会话通过 td-external-agent 选择一个 CLI，将任务交给独立 Agent，并接收执行结果](assets/agent-overview.svg)](assets/agent-overview.svg)
 
@@ -44,6 +44,8 @@ $td-external-agent
 ```
 
 执行或保存前都要明确 `<CLI, Model, Effort>` 三项；缺少任何一项，Skill 会先问你。
+
+DSH 使用 `dsh` 命令，例如：“用 dsh 做只读审查，模型 deepseek-flash，effort high”。支持 API Key 或复用 Desktop 登录；配置与调用差异见 [DSH 说明](references/dsh.md)。
 
 ## 二、保存为项目角色
 

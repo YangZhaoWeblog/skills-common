@@ -4,7 +4,7 @@
 
 **Use other AI coding CLIs as your independent agents.**
 
-Supports **CodeBuddy, tcodex and tclaude**. Choose a model and effort level for coding, reviews or research.
+Supports **CodeBuddy, tcodex, tclaude and DSH**. Choose a model and effort level for coding, reviews or research.
 
 [![Your current session selects a CLI through td-external-agent, delegates a task to an independent agent, and receives the result](assets/agent-overview.en.svg)](assets/agent-overview.en.svg)
 
@@ -44,6 +44,8 @@ Use model <model ID> and effort <medium>.
 ```
 
 Both execution and saving need `<CLI, Model, Effort>`. If any value is missing, the Skill asks you first.
+
+For DSH, use the `dsh` command, for example: “Use dsh for a read-only review with model deepseek-flash and effort high.” It supports an API key or an existing Desktop sign-in; see the [DSH reference](references/dsh.md) for configuration and invocation differences.
 
 ## 2. Save as a project role
 

@@ -1,6 +1,6 @@
 ---
 name: td-external-agent
-description: 通过 tcodex、tclaude 或 CodeBuddy 调用独立外部 Agent，或仅配置项目角色供以后使用；支持派发、跟进、恢复和停止。
+description: 通过 tcodex、tclaude、CodeBuddy 或 DSH 调用独立外部 Agent，或仅配置项目角色供以后使用；支持派发、跟进、恢复和停止。
 ---
 
 # 外部 Agent
@@ -18,8 +18,8 @@ description: 通过 tcodex、tclaude 或 CodeBuddy 调用独立外部 Agent，�
 
 ## 一、派发
 
-1. **核对能力**：只读选定平台说明：[Codex](references/codex.md)、[Claude Code](references/claude.md)、[CodeBuddy](references/codebuddy.md)。定位命令，首次使用或升级时核对帮助、包装器转发和能力；模型 ID 不跨平台照搬，不支持时报告，不静默换入口、模型或档位。
-2. **准备任务**：包含目标、目录、职责、规则与批准依据、读写范围、验收条件和交付位置。有角色文件则读取配置与正文，否则使用本次任务说明；配置显式转为 CLI 参数，职责加入任务。executor 是主控约定字段，不依赖 CLI 自动识别。项目升档策略仅作用于指定角色，本次明确档位优先。
+1. **核对能力**：只读选定平台说明：[Codex](references/codex.md)、[Claude Code](references/claude.md)、[CodeBuddy](references/codebuddy.md)、[DSH](references/dsh.md)。定位命令，首次使用或升级时核对帮助、包装器转发和能力；模型 ID 不跨平台照搬，不支持时报告，不静默换入口、模型或档位。
+2. **准备任务**：包含目标、目录、职责、规则与批准依据、读写范围、验收条件和交付位置。有角色文件则读取配置与正文，否则使用本次任务说明；配置显式转为平台支持的 CLI 参数或本次调用覆盖文件，职责加入任务。executor 是主控约定字段，不依赖 CLI 自动识别。项目升档策略仅作用于指定角色，本次明确档位优先。
 3. **主控核对权限**：依据任务与已有授权确定目录、读写范围和 CLI 设置，检查实际工具能力与冲突写入者，不逐项询问用户。外部 CLI 不继承主控沙箱，Prompt 不提供权限隔离，不默认绕过权限；越权或无法自行解决的严重问题才交用户决定。
 
 ## 二、执行与交付
