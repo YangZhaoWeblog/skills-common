@@ -22,6 +22,14 @@ acceptEdits 仅用于获准文件修改，不等于授权全部 shell 命令。�
 
 恢复时重传已核实的工具/权限参数，保持原 cwd。只读任务按当前 CLI 能力禁用写工具或限定读取工具；纯文本任务可禁用所有工具，但须核对实际生效。保留会话存储，不用 --no-session-persistence、--continue 或 --fork-session 代替明确恢复。
 
+## 运行中反馈：先核对持续输入
+
+Claude Agent SDK 的[官方 streaming 与 single-mode 指南](https://code.claude.com/docs/en/agent-sdk/streaming-vs-single-mode)建议：长任务需要中途追加输入时使用持续 streaming input。该建议不证明本机 `tclaude` 包装器支持相同能力。首次使用或包装器升级后，先核对当前 `tclaude --help`、`--input-format stream-json` 的参数转发，以及执行句柄能否在进程运行时持续写 stdin；再用无工具、只读的小任务验证追加输入能被收到并按编号回复。按帮助和官方协议使用其要求的输入帧，不套用 Codex app-server 的方法或 JSON 格式。
+
+如果参数、stdin 持有或反馈送达任一项未核实，使用上节已知的 `-p` 与明确 `--resume` 流程作为后续反馈入口，或安排固定文件检查点。等待对应编号的明确 ACK／处理结果；提交或排队成功不代表 Agent 已收到。文件更新不会唤醒 Agent，任务结束后需显式恢复。
+
+仅从 stdin 接收 `stream-json` 时，使用持续打开的管道。裸 PTY 可能被 `--print` 判断为没有输入，PTY 行缓冲还可能截断较长的 JSON；短 `Hello` 成功不能证明真实任务能完整送达。主控工具若只能持有 PTY，在本次专属 PTY 关闭行缓冲和回显，通过输入桥接接入 CLI 管道，并核对实际任务长度、多字节文本的编号回执。正常收尾关闭本次输入端并等待退出，不因某轮 `result/success` 就认为整个会话已结束；不停止共享网关。
+
 ## 输出与停止
 
 从 system/init 等事件取得 session_id；result 的 subtype、is_error 与最终文本共同判断本轮结果。result/success 也可能只是模型正常报告了工具拒绝，必须检查真实交付。
