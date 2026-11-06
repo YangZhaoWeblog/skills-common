@@ -1,0 +1,12 @@
+flowchart LR
+    Start((" ")) -->|预约成功| Pending["pending<br/>待执行<br/>允许取消<br/>到期后允许执行"]
+    Pending -->|取消并提交| Canceled["canceled<br/>已取消<br/>不改变展示修订"]
+    Pending -->|"到期执行并提交事务"| Completed["completed<br/>已完成<br/>切换展示修订"]
+    classDef waiting fill:#e6efff,stroke:#6485b6,color:#111
+    classDef canceled fill:#f2f2f2,stroke:#888,color:#111
+    classDef complete fill:#e3efdb,stroke:#6b984e,color:#111
+    classDef terminal fill:#333,stroke:#333,color:#333
+    class Pending waiting
+    class Canceled canceled
+    class Completed complete
+    class Start terminal

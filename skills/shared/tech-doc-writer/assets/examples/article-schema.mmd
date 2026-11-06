@@ -1,0 +1,24 @@
+erDiagram
+    direction LR
+    article ||--o{ article_revision : owns
+    article ||--o{ release_job : schedules
+    article_revision ||--o{ release_job : targets
+    article {
+        varchar_64 id PK
+        varchar_200 title
+        varchar_64 active_revision_id "可空；指向本文章的修订"
+    }
+    article_revision {
+        varchar_64 id PK
+        varchar_64 article_id FK
+        text body
+        bigint created_at "Unix 秒"
+    }
+    release_job {
+        varchar_64 id PK
+        varchar_64 article_id FK
+        varchar_64 revision_id FK
+        bigint execute_at "Unix 秒"
+        varchar_16 state "pending/completed/canceled"
+        bigint version
+    }
